@@ -1,6 +1,6 @@
 # Ahmed Ramadan Mohamed — Portfolio
 
-A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior Backend software Engineer.
+A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior Backend software Enginee.
 
 ## Included files
 
