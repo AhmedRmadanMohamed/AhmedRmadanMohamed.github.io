@@ -1,6 +1,6 @@
 # Ahmed Ramadan Mohamed — Portfolio
 
-A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior Spring Boot Backend Engineer.
+A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior Backend software Engineer.
 
 ## Included files
 
