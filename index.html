@@ -48,6 +48,8 @@
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/jetbrains-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <script>document.documentElement.classList.add("js");</script>
+
   <style>
     @font-face {
       font-family: "Manrope";
@@ -127,6 +129,7 @@
         linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
       background-size: 44px 44px;
+      -webkit-mask-image: linear-gradient(to bottom, black, transparent 78%);
       mask-image: linear-gradient(to bottom, black, transparent 78%);
     }
 
@@ -194,6 +197,7 @@
       z-index: 100;
       border-bottom: 1px solid transparent;
       background: rgba(7, 17, 31, 0.74);
+      -webkit-backdrop-filter: blur(18px);
       backdrop-filter: blur(18px);
       transition: border-color 180ms ease, background 180ms ease;
     }
@@ -1253,12 +1257,17 @@
     }
 
     .reveal {
+      opacity: 1;
+      transform: none;
+    }
+
+    .js .reveal {
       opacity: 0;
       transform: translateY(16px);
       transition: opacity 520ms ease, transform 520ms ease;
     }
 
-    .reveal.visible {
+    .js .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
@@ -1518,7 +1527,8 @@
         transition-duration: 0.01ms !important;
       }
 
-      .reveal {
+      .reveal,
+      .js .reveal {
         opacity: 1;
         transform: none;
       }
@@ -1583,7 +1593,8 @@
         background: none;
       }
 
-      .reveal {
+      .reveal,
+      .js .reveal {
         opacity: 1;
         transform: none;
       }
@@ -2494,7 +2505,6 @@
               </section>
             </div>
           </div>
-          </div>
         </div>
       </div>
     </section>
@@ -2580,11 +2590,21 @@
         isOpen ? "Close navigation" : "Open navigation"
       );
       document.body.classList.toggle("menu-open", isOpen);
+
+      if (isOpen) {
+        const firstMenuLink = navLinks.querySelector('a[href]');
+        firstMenuLink?.focus({ preventScroll: true });
+      }
     });
 
     sectionLinks.forEach((link) => {
       link.addEventListener("click", () => closeMenu());
     });
+
+    const getMenuFocusableElements = () =>
+      [...navLinks.querySelectorAll('a[href]')].filter(
+        (element) => !element.hasAttribute("disabled") && element.tabIndex !== -1
+      );
 
     document.addEventListener("keydown", (event) => {
       if (!navLinks.classList.contains("open")) {
@@ -2592,7 +2612,32 @@
       }
 
       if (event.key === "Escape") {
+        event.preventDefault();
         closeMenu({ returnFocus: true });
+        return;
+      }
+
+      if (event.key !== "Tab") {
+        return;
+      }
+
+      const focusableElements = getMenuFocusableElements();
+
+      if (!focusableElements.length) {
+        event.preventDefault();
+        menuButton.focus();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
       }
     });
 
@@ -2651,7 +2696,7 @@
               link.classList.toggle("active", isActive);
 
               if (isActive) {
-                link.setAttribute("aria-current", "true");
+                link.setAttribute("aria-current", "location");
               } else {
                 link.removeAttribute("aria-current");
               }
