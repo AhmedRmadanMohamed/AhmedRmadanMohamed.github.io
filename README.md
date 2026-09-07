@@ -1,13 +1,14 @@
 # Ahmed Ramadan Mohamed — Portfolio
 
-A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior Backend software Enginee.
+A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior Java Backend Engineer.
 
 ## Included files
 
 - `index.html` — complete portfolio with inline CSS and JavaScript
 - `Ahmed_Ramadan_Mohamed_CV.pdf` — current professional résumé linked from the portfolio
 - `og.jpg` — optimized 1200×630 social sharing image for link previews
-- `Ahmed_Ramadan_Mohamed_CV.jpg` — archived previous résumé image
+- `Ahmed_Ramadan_Mohamed_CV.png` — archived résumé image
+- `robots.txt` and `sitemap.xml` — crawl guidance for search engines
 
 ## Highlights
 
@@ -17,7 +18,7 @@ A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior 
 - Reduced-motion and print support
 - SEO, Open Graph, Twitter Card, and structured Person metadata
 - Professional experience, skills, projects, education, certifications, and contact links
-- Content aligned with the current professional résumé
+- Content aligned with the current résumé, LinkedIn profile, and public GitHub repositories
 
 ## Preview locally
 

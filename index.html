@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Ahmed Ramadan Mohamed — Senior Java Backend Engineer and Senior Java Software Engineer at Vodafone Egypt with 8+ years of software engineering experience and 5+ years focused on Java, Spring Boot, Microservices, REST APIs, Kafka, Spring Security, Oracle Database, AWS, Azure, and production backend systems."
+    content="Ahmed Ramadan Mohamed is a Senior Java Backend Engineer at Vodafone Egypt, building secure Java 17, Spring Boot, microservices and enterprise API platforms."
   >
   <meta
     name="keywords"
@@ -19,16 +19,16 @@
   <meta property="og:title" content="Ahmed Ramadan Mohamed | Senior Java Backend Engineer">
   <meta
     property="og:description"
-    content="Senior Java Backend Engineer and Senior Java Software Engineer at Vodafone Egypt with 8+ years of software engineering experience, specializing in Java 17, Spring Boot, Microservices, REST APIs, Kafka, secure financial platforms, and distributed backend systems."
+    content="Senior Java Backend Engineer at Vodafone Egypt building secure Java 17 and Spring Boot services, Kafka integrations, microservices and enterprise APIs."
   >
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
   <meta property="og:url" content="https://ahmedrmadanmohamed.github.io/">
-  <meta property="og:image" content="https://ahmedrmadanmohamed.github.io/facebook-preview-v4.png">
-  <meta property="og:image:secure_url" content="https://ahmedrmadanmohamed.github.io/facebook-preview-v4.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1254">
-  <meta property="og:image:height" content="1254">
+  <meta property="og:image" content="https://ahmedrmadanmohamed.github.io/og.jpg">
+  <meta property="og:image:secure_url" content="https://ahmedrmadanmohamed.github.io/og.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Ahmed Ramadan Mohamed — Senior Java Backend Engineer">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -37,12 +37,13 @@
     name="twitter:description"
     content="Java 17, Spring Boot, Microservices, REST APIs, Kafka, System Design, Distributed Systems, Spring Security, Oracle PL/SQL, AWS, Azure, Docker, and CI/CD."
   >
-  <meta name="twitter:image" content="https://ahmedrmadanmohamed.github.io/facebook-preview-v4.png">
+  <meta name="twitter:image" content="https://ahmedrmadanmohamed.github.io/og.jpg">
   <meta name="twitter:image:alt" content="Ahmed Ramadan Mohamed — Senior Java Backend Engineer">
 
   <title>Ahmed Ramadan Mohamed | Senior Java Backend Engineer</title>
 
   <link rel="canonical" href="https://ahmedrmadanmohamed.github.io/">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -246,6 +247,12 @@
       color: var(--muted);
       font-size: 0.93rem;
       font-weight: 600;
+    }
+
+    .nav-links,
+    .menu-button {
+      position: relative;
+      z-index: 2;
     }
 
     .nav-links a {
@@ -555,6 +562,11 @@
       padding: 104px 0;
     }
 
+    main > section:not(.hero) {
+      content-visibility: auto;
+      contain-intrinsic-size: 820px;
+    }
+
     .section-heading {
       max-width: 980px;
       display: flex;
@@ -771,12 +783,22 @@
     }
 
     .project-card {
+      position: relative;
       min-height: 100%;
       display: flex;
       flex-direction: column;
       padding: 26px;
       overflow: hidden;
       transition: transform 170ms ease, border-color 170ms ease;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--blue));
+      opacity: 0.72;
     }
 
     .project-card:hover {
@@ -791,11 +813,13 @@
       font-size: 0.8rem;
     }
 
-    .project-date {
+    .project-meta {
       margin-bottom: 28px;
       color: var(--muted);
       font-family: "JetBrains Mono", monospace;
       font-size: 0.72rem;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
     }
 
     .project-card h3 {
@@ -1029,15 +1053,6 @@
       scrollbar-width: thin;
     }
 
-    .linkedin-official-badge {
-      max-width: 100%;
-    }
-
-    /* LinkedIn replaces this link when its official badge script loads. */
-    .linkedin-official-badge > .LI-simple-link {
-      display: none;
-    }
-
     .linkedin-fallback-card {
       width: 100%;
       min-height: 290px;
@@ -1050,10 +1065,6 @@
         radial-gradient(circle at 92% 8%, rgba(10, 102, 194, 0.26), transparent 34%),
         linear-gradient(145deg, rgba(18, 39, 66, 0.98), rgba(8, 23, 40, 0.98));
       text-align: left;
-    }
-
-    .linkedin-fallback-card[hidden] {
-      display: none;
     }
 
     .linkedin-logo {
@@ -1337,6 +1348,16 @@
         box-shadow: var(--shadow);
         max-height: calc(100vh - 104px);
         overflow-y: auto;
+        z-index: 3;
+      }
+
+      body.menu-open::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: rgba(2, 8, 16, 0.62);
       }
 
       .nav-links.open {
@@ -1550,6 +1571,7 @@
       .status,
       .project-link,
       .linkedin-profile,
+      .professional-badges,
       footer {
         display: none !important;
       }
@@ -1607,9 +1629,9 @@
     "@type": "Person",
     "name": "Ahmed Ramadan Mohamed",
     "url": "https://ahmedrmadanmohamed.github.io/",
-    "image": "https://ahmedrmadanmohamed.github.io/facebook-preview-v4.png",
+    "image": "https://ahmedrmadanmohamed.github.io/assets/images/profile-logo.webp",
     "jobTitle": "Senior Java Software Engineer",
-    "description": "Senior Java Backend Engineer and Senior Java Software Engineer at Vodafone Egypt with 8+ years of software engineering experience and 5+ years focused on Java and Spring Boot backend development.",
+    "description": "Senior Java Backend Engineer and Senior Java Software Engineer at Vodafone Egypt with 8+ years of software engineering experience and approximately 6 years focused on Java backend development with Java and Spring Boot.",
     "worksFor": {
       "@type": "Organization",
       "name": "Vodafone Egypt"
@@ -1713,8 +1735,8 @@
             <p class="hero-copy">
               I am <strong>Ahmed Ramadan Mohamed</strong>, a Senior Java Software
               Engineer at <strong>Vodafone Egypt</strong> with <strong>8+ years of
-              software engineering experience</strong>, including <strong>5+ years
-              focused on Java and Spring Boot</strong>. I build secure, scalable
+              software engineering experience</strong>, including approximately <strong>6 years
+              focused on Java backend development</strong>. I build secure, production-grade
               backend services using <strong>Java 17, Spring Boot, Microservices,
               REST APIs, Kafka, Spring Security, and Oracle Database</strong>.
             </p>
@@ -1737,7 +1759,7 @@
             </div>
           </div>
 
-          <aside class="profile-card reveal" aria-label="Professional profile summary">
+          <aside class="profile-card reveal visible" aria-label="Professional profile summary">
             <div class="code-label">&lt;engineering-profile /&gt;</div>
             <h2 class="profile-name">Ahmed Ramadan Mohamed</h2>
             <p class="profile-role">
@@ -1777,7 +1799,7 @@
 
             <div class="status">
               <span class="status-dot" aria-hidden="true"></span>
-              <span>Open to senior Java backend engineering opportunities</span>
+              <span>Open to senior Java backend roles across Egypt, the Gulf and Europe · Remote, hybrid or on-site</span>
             </div>
           </aside>
         </div>
@@ -1788,8 +1810,8 @@
             <span>Years in software engineering</span>
           </div>
           <div class="metric">
-            <strong>5+</strong>
-            <span>Years focused on Java &amp; Spring Boot</span>
+            <strong>6+</strong>
+            <span>Years focused on Java backend engineering</span>
           </div>
           <div class="metric">
             <strong>~25M</strong>
@@ -1818,8 +1840,8 @@
           <article class="panel about-copy reveal">
             <p>
               <strong>Senior Java Backend Engineer and Senior Java Software Engineer</strong>
-              with 8+ years of software engineering experience, including 5+ years
-              focused on Java and Spring Boot. I design, build, integrate, and support
+              with 8+ years of software engineering experience, including approximately 6 years
+              focused on Java backend development. I design, build, integrate, and support
               secure backend systems for financial and enterprise environments.
             </p>
 
@@ -1927,6 +1949,7 @@
               <span class="tag">PL/SQL</span>
               <span class="tag">PostgreSQL</span>
               <span class="tag">MySQL</span>
+              <span class="tag">Redis</span>
               <span class="tag">SQL Server</span>
               <span class="tag">T-SQL</span>
               <span class="tag">RMAN</span>
@@ -1941,6 +1964,7 @@
             <div class="tags">
               <span class="tag">Spring Security</span>
               <span class="tag">JWT</span>
+              <span class="tag">OAuth 2.0</span>
               <span class="tag">Authentication</span>
               <span class="tag">Authorization</span>
               <span class="tag">Role-Based Access Control</span>
@@ -1949,6 +1973,8 @@
               <span class="tag">Mockito</span>
               <span class="tag">Unit Testing</span>
               <span class="tag">Integration Testing</span>
+              <span class="tag">Testcontainers</span>
+              <span class="tag">SonarQube</span>
               <span class="tag">Postman</span>
               <span class="tag">Swagger / OpenAPI</span>
             </div>
@@ -1961,6 +1987,7 @@
               <span class="tag">GitHub</span>
               <span class="tag">SVN</span>
               <span class="tag">Docker</span>
+              <span class="tag">Kubernetes</span>
               <span class="tag">Jenkins</span>
               <span class="tag">CI/CD</span>
               <span class="tag">AWS</span>
@@ -2016,7 +2043,7 @@
                   <h3>Senior Java Software Engineer</h3>
                   <div class="company">Vodafone Egypt · Vodafone Cash</div>
                 </div>
-                <span class="date">Aug 2024 — Present</span>
+                <span class="date">Sep 2024 — Present</span>
               </div>
 
               <ul class="bullet-list">
@@ -2187,19 +2214,19 @@
         <div class="projects-grid">
           <article class="panel project-card reveal">
             <div class="project-number">PROJECT / 01</div>
-            <div class="project-date">Jul 2024 — Present</div>
-            <h3>E-commerce Platform</h3>
+            <div class="project-meta">Active foundation · Java 17</div>
+            <h3>E-commerce Backend Foundation</h3>
             <p>
-              Full-stack e-commerce platform with a Spring Boot backend,
-              PostgreSQL database, and Angular frontend. The solution includes
-              product management, order processing, application security,
-              persistence, validation, and maintainability improvements.
+              Spring Boot e-commerce backend foundation for products, categories,
+              carts, orders, reviews, users, brands, and storefront configuration.
+              The layered controller, service, DTO/mapper, and repository design
+              uses MySQL persistence, global exception handling, and consistent API responses.
             </p>
             <div class="project-stack">
               <span>Spring Boot</span>
-              <span>Spring Security</span>
-              <span>PostgreSQL</span>
-              <span>Angular</span>
+              <span>Java 17</span>
+              <span>MySQL</span>
+              <span>REST APIs</span>
             </div>
             <a
               class="project-link"
@@ -2207,38 +2234,41 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              View source code <span aria-hidden="true">↗</span>
+              View repository <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="panel project-card reveal">
             <div class="project-number">PROJECT / 02</div>
-            <div class="project-date">May 2023 — Nov 2023</div>
-            <h3>Human Resources Management System</h3>
+            <div class="project-meta">Secure API · Java 17</div>
+            <h3>Human Resources API</h3>
             <p>
-              HR management system built with Spring Boot, Spring Security,
-              PostgreSQL, and REST APIs. The application supports employee records,
-              attendance, leave management, payroll, recruitment, and performance data.
+              Production-oriented Spring Boot backend for workforce and recruitment
+              workflows with stateless JWT authentication, role-based access,
+              BCrypt password hashing, validation, Flyway-managed schema, OpenAPI,
+              Docker, and MySQL.
             </p>
             <div class="project-stack">
               <span>Spring Boot</span>
               <span>Spring Security</span>
-              <span>REST APIs</span>
-              <span>PostgreSQL</span>
+              <span>JWT / RBAC</span>
+              <span>Flyway</span>
+              <span>MySQL</span>
+              <span>Docker</span>
             </div>
             <a
               class="project-link"
-              href="https://github.com/AhmedRmadanMohamed/Human-Resources"
+              href="https://github.com/AhmedRmadanMohamed/Human-Resources-v2.0.0"
               target="_blank"
               rel="noopener noreferrer"
             >
-              View source code <span aria-hidden="true">↗</span>
+              View repository <span aria-hidden="true">↗</span>
             </a>
           </article>
 
           <article class="panel project-card reveal">
             <div class="project-number">PROJECT / 03</div>
-            <div class="project-date">Oct 2021 — Apr 2022</div>
+            <div class="project-meta">Inventory system · Spring Boot</div>
             <h3>Medicine Stock Management System</h3>
             <p>
               Medicine inventory management system built with Spring Boot,
@@ -2256,7 +2286,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              View source code <span aria-hidden="true">↗</span>
+              View repository <span aria-hidden="true">↗</span>
             </a>
           </article>
         </div>
@@ -2279,7 +2309,7 @@
             <h3>Education</h3>
 
             <div class="degree">
-              <strong>Master of Science in Computer Science and Software Engineering</strong>
+              <strong>Master’s studies in Computer Science and Software Engineering</strong>
               <p>
                 Arab Academy for Science, Technology &amp; Maritime Transport — AASTMT
               </p>
@@ -2319,9 +2349,8 @@
           <h2>Let’s build dependable backend systems.</h2>
 
           <p>
-            For Senior Java Backend Engineer, Senior Java Software Engineer, Senior Backend Engineer,
-            Spring Boot, Microservices, REST API, Kafka, Oracle PL/SQL, cloud, CI/CD, or enterprise backend opportunities,
-            contact me directly or review my public engineering profiles.
+            I’m open to Senior Java Backend Engineer opportunities across Egypt, the Gulf and Europe,
+            including remote, hybrid and on-site roles. Reach out directly or review my public engineering work.
           </p>
 
           <div class="contact-links">
@@ -2389,29 +2418,7 @@
                 </div>
 
                 <div class="linkedin-badge-wrap">
-                  <!-- Official LinkedIn Public Profile Badge -->
-                  <div
-                    id="linkedin-official-badge"
-                    class="badge-base LI-profile-badge linkedin-official-badge"
-                    data-locale="en_US"
-                    data-size="large"
-                    data-theme="dark"
-                    data-type="VERTICAL"
-                    data-vanity="ahmedramadanmohamedsmaha"
-                    data-version="v1"
-                  >
-                    <a
-                      class="badge-base__link LI-simple-link"
-                      href="https://eg.linkedin.com/in/ahmedramadanmohamedsmaha?trk=profile-badge"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Ahmed Ramadan Mohamed
-                    </a>
-                  </div>
-
-                  <!-- Fallback shown only when LinkedIn's external script is blocked -->
-                  <article id="linkedin-badge-fallback" class="linkedin-fallback-card">
+                  <article class="linkedin-fallback-card">
                     <div class="badge-person">
                       <img
                         class="badge-person-photo"
@@ -2438,7 +2445,7 @@
 
                     <a
                       class="badge-action linkedin-action"
-                      href="https://eg.linkedin.com/in/ahmedramadanmohamedsmaha?trk=profile-badge"
+                      href="https://www.linkedin.com/in/ahmedramadanmohamedsmaha/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -2598,7 +2605,30 @@
     });
 
     sectionLinks.forEach((link) => {
-      link.addEventListener("click", () => closeMenu());
+      link.addEventListener("click", (event) => {
+        if (!navLinks.classList.contains("open")) {
+          return;
+        }
+
+        const target = document.querySelector(link.getAttribute("href"));
+
+        if (!target) {
+          closeMenu();
+          return;
+        }
+
+        event.preventDefault();
+        closeMenu();
+        target.setAttribute("tabindex", "-1");
+        target.focus({ preventScroll: true });
+        target.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ? "auto"
+            : "smooth",
+          block: "start"
+        });
+        window.history.pushState(null, "", link.getAttribute("href"));
+      });
     });
 
     const getMenuFocusableElements = () =>
@@ -2718,43 +2748,6 @@
       });
     }
 
-    const linkedinBadgeHost = document.getElementById("linkedin-official-badge");
-    const linkedinBadgeFallback = document.getElementById("linkedin-badge-fallback");
-
-    const updateLinkedInBadgeState = () => {
-      if (!linkedinBadgeHost || !linkedinBadgeFallback) {
-        return;
-      }
-
-      const officialBadgeRendered =
-        Boolean(linkedinBadgeHost.querySelector("iframe")) ||
-        Boolean(linkedinBadgeHost.querySelector(".profile-badge")) ||
-        linkedinBadgeHost.children.length > 1 ||
-        !linkedinBadgeHost.querySelector(".LI-simple-link");
-
-      linkedinBadgeFallback.hidden = officialBadgeRendered;
-    };
-
-    if (linkedinBadgeHost && linkedinBadgeFallback) {
-      const linkedInBadgeObserver = new MutationObserver(updateLinkedInBadgeState);
-      linkedInBadgeObserver.observe(linkedinBadgeHost, {
-        childList: true,
-        subtree: true
-      });
-
-      window.addEventListener("load", () => {
-        window.setTimeout(updateLinkedInBadgeState, 1800);
-        window.setTimeout(updateLinkedInBadgeState, 4500);
-      });
-    }
-
   </script>
-
-  <script
-    src="https://platform.linkedin.com/badges/js/profile.js"
-    async
-    defer
-    type="text/javascript"
-  ></script>
 </body>
 </html>
