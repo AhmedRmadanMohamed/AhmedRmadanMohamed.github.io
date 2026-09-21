@@ -6,7 +6,7 @@
 
   <meta
     name="description"
-    content="Ahmed Ramadan Mohamed is a Senior Java Backend Engineer at Vodafone Egypt, building secure Java 17, Spring Boot, microservices and enterprise API platforms."
+    content="Ahmed Ramadan Mohamed, Senior Java Backend Engineer at Vodafone Egypt. Explore Java and Spring Boot projects, the DevQA IntelliJ plugin, and my résumé."
   >
   <meta
     name="keywords"
@@ -19,7 +19,7 @@
   <meta property="og:title" content="Ahmed Ramadan Mohamed | Senior Java Backend Engineer">
   <meta
     property="og:description"
-    content="Senior Java Backend Engineer at Vodafone Egypt building secure Java 17 and Spring Boot services, Kafka integrations, microservices and enterprise APIs."
+    content="Explore my Java and Spring Boot work, including DevQA: repository intelligence inside IntelliJ IDEA. View the product demo, public projects, and résumé."
   >
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_US">
@@ -396,6 +396,21 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
+    }
+
+    .current-work {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      color: var(--accent-strong);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .current-work:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
     }
 
     .button {
@@ -778,7 +793,7 @@
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 20px;
     }
 
@@ -866,6 +881,73 @@
 
     .project-link:hover span {
       transform: translate(3px, -2px);
+    }
+
+    .project-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      align-items: center;
+      gap: 32px;
+      padding: 32px;
+      background: linear-gradient(135deg, rgba(20, 42, 70, 0.95), rgba(9, 23, 39, 0.94));
+    }
+
+    .project-featured:hover {
+      transform: none;
+    }
+
+    .project-featured .project-meta {
+      margin-bottom: 16px;
+    }
+
+    .project-featured h3 {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2;
+    }
+
+    .project-featured .project-stack {
+      margin-bottom: 20px;
+    }
+
+    .project-preview {
+      min-width: 0;
+      margin: 0;
+    }
+
+    .project-preview a {
+      display: block;
+      border: 1px solid rgba(114, 167, 255, 0.3);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.25);
+    }
+
+    .project-preview img {
+      width: 100%;
+      height: auto;
+    }
+
+    .project-preview figcaption {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.65;
+    }
+
+    .project-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px 20px;
+    }
+
+    .project-featured .project-milestone {
+      margin: 20px 0 0;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      color: var(--accent-strong);
+      font-size: 0.8rem;
     }
 
     .education-grid {
@@ -1313,6 +1395,11 @@
         grid-template-columns: 1fr;
       }
 
+      .project-featured {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
       .project-card {
         min-height: 300px;
       }
@@ -1495,6 +1582,10 @@
 
       .project-card {
         min-height: auto;
+      }
+
+      .project-featured {
+        padding: 24px;
       }
 
       .profile-card,
@@ -1707,10 +1798,10 @@
 
       <nav aria-label="Primary navigation">
         <ul class="nav-links" id="nav-links">
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
           <li><a href="#education">Education</a></li>
           <li><a class="nav-cta" href="#contact">Contact</a></li>
         </ul>
@@ -1742,21 +1833,25 @@
             </p>
 
             <div class="hero-actions">
-              <a class="button button-primary" href="#projects">
-                Explore selected work <span aria-hidden="true">↗</span>
+              <a class="button button-primary" href="#devqa">
+                Explore DevQA <span aria-hidden="true">↗</span>
               </a>
 
               <a
                 class="button"
                 href="Ahmed_Ramadan_Mohamed_CV.pdf"
-                target="_blank"
-                rel="noopener"
+                download="Ahmed_Ramadan_Mohamed_CV.pdf"
               >
-                Open résumé
+                Download résumé
               </a>
 
-              <a class="button" href="#contact">Get in touch</a>
+              <a class="button" href="mailto:ahmedramadansmaha@gmail.com?subject=Senior%20Java%20Backend%20Opportunity">Discuss an opportunity</a>
             </div>
+
+            <a class="current-work" href="#devqa">
+              <span class="status-dot" aria-hidden="true"></span>
+              Currently building DevQA · See the latest milestone <span aria-hidden="true">↗</span>
+            </a>
           </div>
 
           <aside class="profile-card reveal visible" aria-label="Professional profile summary">
@@ -1825,10 +1920,130 @@
       </div>
     </section>
 
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-kicker">01 · Featured projects</p>
+          <h2>Developer tools and Spring Boot systems.</h2>
+          <p>
+            Projects spanning repository intelligence, backend development,
+            relational database design, REST APIs, and practical business workflows.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <article class="panel project-card project-featured reveal" id="devqa" aria-labelledby="devqa-title">
+            <div>
+              <div class="project-number">PROJECT / 01 · CURRENTLY BUILDING</div>
+              <div class="project-meta">Sep 2026 - Present</div>
+              <h3 id="devqa-title">DevQA - Intelligence Platform</h3>
+              <p>
+                Understand a Spring Boot codebase before the next review. I’m building
+                an IntelliJ IDEA plugin that discovers application layers, classifies
+                Java components, and brings project files into one interactive
+                architecture dashboard.
+              </p>
+              <div class="project-stack">
+                <span>Kotlin</span>
+                <span>IntelliJ Platform SDK</span>
+                <span>PSI APIs</span>
+                <span>Spring Boot Analysis</span>
+              </div>
+              <div class="project-actions">
+                <a
+                  class="button button-primary"
+                  href="https://github.com/AhmedRmadanMohamed/DevQAReview"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Explore GitHub showcase <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  class="project-link"
+                  href="https://www.linkedin.com/posts/ahmedramadanmohamedsmaha_java-springboot-intellijidea-activity-7503421471629762560-otMz"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Watch the demo <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+              <p class="project-milestone">Current milestone: Project Brain · Testing &amp; validation</p>
+            </div>
+            <figure class="project-preview">
+              <a href="assets/images/devqa-dashboard.png" target="_blank" rel="noopener" aria-label="Open the full-size DevQA dashboard screenshot">
+                <img
+                  src="assets/images/devqa-dashboard.png"
+                  alt="DevQA Project Brain inside IntelliJ IDEA, showing the HumanResourcesSystem project overview and detected application layers"
+                  width="1901"
+                  height="1072"
+                  loading="lazy"
+                  decoding="async"
+                >
+              </a>
+              <figcaption>Project Brain analyzing the HumanResourcesSystem sample. Open the image to explore the dashboard in full size.</figcaption>
+            </figure>
+          </article>
+
+          <article class="panel project-card reveal">
+            <div class="project-number">PROJECT / 02</div>
+            <div class="project-meta">Jul 2024 - Feb 2026</div>
+            <h3>E-commerce Platform</h3>
+            <p>
+              A Spring Boot e-commerce platform with backend business logic,
+              persistent data management, and a domain model for products,
+              categories, carts, orders, reviews, and users. Layered controllers,
+              services, DTOs, and repositories support catalog and storefront
+              APIs with consistent responses and global exception handling.
+            </p>
+            <div class="project-stack">
+              <span>Spring Boot</span>
+              <span>Java 17</span>
+              <span>Spring Data JPA</span>
+              <span>REST APIs</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/AhmedRmadanMohamed/E-commerce"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repository <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+
+          <article class="panel project-card reveal">
+            <div class="project-number">PROJECT / 03</div>
+            <div class="project-meta">May 2023 - Nov 2023</div>
+            <h3>Human Resources Management System</h3>
+            <p>
+              A human resources management application built with Spring Boot,
+              Spring Security, and PostgreSQL. The backend supports job seekers,
+              employers, job listings, approval workflows, and workforce reference
+              data through layered REST APIs and persistent data storage.
+            </p>
+            <div class="project-stack">
+              <span>Spring Boot</span>
+              <span>Spring Security</span>
+              <span>PostgreSQL</span>
+              <span>REST APIs</span>
+            </div>
+            <a
+              class="project-link"
+              href="https://github.com/AhmedRmadanMohamed/Human-Resources"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repository <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-kicker">01 · About</p>
+          <p class="section-kicker">02 · About</p>
           <h2>Backend engineering for secure, distributed platforms.</h2>
           <p>
             Financial systems, enterprise integration, API security, data access,
@@ -1898,7 +2113,7 @@
     <section id="skills">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-kicker">02 · Technical skills</p>
+          <p class="section-kicker">03 · Technical skills</p>
           <h2>A backend stack built for production.</h2>
           <p>
             Technologies and engineering practices used across enterprise
@@ -2025,7 +2240,7 @@
     <section id="experience">
       <div class="container">
         <div class="section-heading reveal">
-          <p class="section-kicker">03 · Experience</p>
+          <p class="section-kicker">04 · Experience</p>
           <h2>Financial platforms, enterprise systems, and production backend engineering.</h2>
           <p>
             Experience spanning Java backend engineering, distributed systems,
@@ -2195,101 +2410,6 @@
                 </li>
               </ul>
             </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <div class="section-heading reveal">
-          <p class="section-kicker">04 · Featured projects</p>
-          <h2>Developer tools and Spring Boot systems.</h2>
-          <p>
-            Projects spanning repository intelligence, backend development,
-            relational database design, REST APIs, and practical business workflows.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <article class="panel project-card reveal">
-            <div class="project-number">PROJECT / 01</div>
-            <div class="project-meta">Sep 2026 - Present</div>
-            <h3>DevQA - Intelligence Platform</h3>
-            <p>
-              An IntelliJ IDEA plugin that analyzes Spring Boot repositories and
-              identifies Controllers, Services, Repositories, Entities, and DTOs.
-              Its Project Brain module inventories source, test, configuration,
-              resource, SQL, and documentation files in an interactive architecture
-              dashboard. The current milestone is under testing and validation.
-            </p>
-            <div class="project-stack">
-              <span>Kotlin</span>
-              <span>IntelliJ Platform SDK</span>
-              <span>PSI APIs</span>
-              <span>Spring Boot Analysis</span>
-            </div>
-            <a
-              class="project-link"
-              href="https://github.com/AhmedRmadanMohamed/DevQAReview"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View GitHub showcase <span aria-hidden="true">↗</span>
-            </a>
-          </article>
-
-          <article class="panel project-card reveal">
-            <div class="project-number">PROJECT / 02</div>
-            <div class="project-meta">Jul 2024 - Feb 2026</div>
-            <h3>E-commerce Platform</h3>
-            <p>
-              A Spring Boot e-commerce platform with backend business logic,
-              persistent data management, and a domain model for products,
-              categories, carts, orders, reviews, and users. Layered controllers,
-              services, DTOs, and repositories support catalog and storefront
-              APIs with consistent responses and global exception handling.
-            </p>
-            <div class="project-stack">
-              <span>Spring Boot</span>
-              <span>Java 17</span>
-              <span>Spring Data JPA</span>
-              <span>REST APIs</span>
-            </div>
-            <a
-              class="project-link"
-              href="https://github.com/AhmedRmadanMohamed/E-commerce"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View repository <span aria-hidden="true">↗</span>
-            </a>
-          </article>
-
-          <article class="panel project-card reveal">
-            <div class="project-number">PROJECT / 03</div>
-            <div class="project-meta">May 2023 - Nov 2023</div>
-            <h3>Human Resources Management System</h3>
-            <p>
-              A human resources management application built with Spring Boot,
-              Spring Security, and PostgreSQL. The backend supports job seekers,
-              employers, job listings, approval workflows, and workforce reference
-              data through layered REST APIs and persistent data storage.
-            </p>
-            <div class="project-stack">
-              <span>Spring Boot</span>
-              <span>Spring Security</span>
-              <span>PostgreSQL</span>
-              <span>REST APIs</span>
-            </div>
-            <a
-              class="project-link"
-              href="https://github.com/AhmedRmadanMohamed/Human-Resources"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View repository <span aria-hidden="true">↗</span>
-            </a>
           </article>
         </div>
       </div>

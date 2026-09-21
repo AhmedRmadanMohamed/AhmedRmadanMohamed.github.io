@@ -6,6 +6,7 @@ A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior 
 
 - `index.html` — complete portfolio with inline CSS and JavaScript
 - `Ahmed_Ramadan_Mohamed_CV.pdf` — current professional résumé linked from the portfolio
+- `assets/images/devqa-dashboard.png` — original Project Brain screenshot from the public [DevQA showcase](https://github.com/AhmedRmadanMohamed/DevQAReview)
 - `og.jpg` — optimized 1200×630 social sharing image for link previews
 - `Ahmed_Ramadan_Mohamed_CV.png` — archived résumé image
 - `robots.txt` and `sitemap.xml` — crawl guidance for search engines
@@ -18,6 +19,8 @@ A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior 
 - Reduced-motion and print support
 - SEO, Open Graph, Twitter Card, and structured Person metadata
 - Professional experience, skills, projects, education, certifications, and contact links
+- Featured projects directly after the introduction, with a visual DevQA showcase and links to its product demo
+- Direct résumé download and an opportunity contact action in the introduction
 - Content aligned with the current résumé, LinkedIn profile, and public GitHub repositories
 
 ## Preview locally
