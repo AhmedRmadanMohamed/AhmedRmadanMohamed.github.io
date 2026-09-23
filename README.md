@@ -17,7 +17,7 @@ A polished, responsive one-page portfolio for **Ahmed Ramadan Mohamed**, Senior 
 - Self-hosted Manrope and JetBrains Mono fonts for consistent, fast rendering
 - Keyboard-accessible navigation and mobile menu
 - Reduced-motion and print support
-- SEO, Open Graph, Twitter Card, and structured Person metadata
+- SEO, Open Graph, Twitter Card, and Google-compatible `ProfilePage`/`Person` structured data linking the official LinkedIn, GitHub, and portfolio identity
 - Professional experience, skills, projects, education, certifications, and contact links
 - Featured projects directly after the introduction, with a visual DevQA showcase and links to its product demo
 - Direct résumé download and an opportunity contact action in the introduction
